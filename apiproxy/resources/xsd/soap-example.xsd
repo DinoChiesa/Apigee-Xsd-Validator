@@ -1,0 +1,33 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           targetNamespace="http://www.w3.org/2003/05/soap-envelope"
+           xmlns:header="urn://HeaderNamespace"
+           xmlns:body="urn://MethodNamespace"
+           xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+
+  <xs:import namespace="urn://HeaderNamespace" schemaLocation="xsd://soap-header-child.xsd"/>
+  <xs:import namespace="urn://MethodNamespace"
+             schemaLocation="xsd://soap-body-child.xsd"/>
+
+  <xs:element name="Envelope">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name='Header' type="soap12:soapHeader" minOccurs='0'/>
+        <xs:element name='Body'   type="soap12:soapBody"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="soapHeader">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element ref="header:AuthSOAPHeader"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name='soapBody'>
+    <xs:sequence>
+      <xs:element ref="body:SoapMethodName"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

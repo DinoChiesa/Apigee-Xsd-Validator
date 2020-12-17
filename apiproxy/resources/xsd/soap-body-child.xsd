@@ -1,0 +1,17 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           targetNamespace="urn://MethodNamespace"
+           xmlns:ns1="urn://MethodNamespace">
+  <xs:element name="SoapMethodName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ns1:Other"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Other">
+    <xs:complexType>
+      <xs:attribute name="ElementsofBODY" use="optional" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

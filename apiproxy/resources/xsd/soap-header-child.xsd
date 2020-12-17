@@ -1,0 +1,17 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           targetNamespace="urn://HeaderNamespace"
+           xmlns:header="urn://HeaderNamespace">
+
+  <xs:element name="AuthSOAPHeader">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="header:MoreHeaderElementsHere"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoreHeaderElementsHere">
+    <xs:complexType/>
+  </xs:element>
+
+</xs:schema>

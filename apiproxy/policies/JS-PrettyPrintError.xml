@@ -1,0 +1,3 @@
+<Javascript name='JS-PrettyPrintError' timeLimit='200' >
+  <ResourceURL>jsc://prettyPrintError.js</ResourceURL>
+</Javascript>

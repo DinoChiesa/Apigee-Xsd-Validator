@@ -1,0 +1,5 @@
+  <soap12:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+    <SoapMethodName xmlns="urn://MethodNamespace">
+      <Other ElementsofBODY='foo'/>
+    </SoapMethodName>
+  </soap12:Body>

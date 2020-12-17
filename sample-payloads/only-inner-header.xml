@@ -1,0 +1,3 @@
+    <AuthSOAPHeader xmlns="urn://HeaderNamespace">
+      <MoreHeaderElementsHere/>
+    </AuthSOAPHeader>

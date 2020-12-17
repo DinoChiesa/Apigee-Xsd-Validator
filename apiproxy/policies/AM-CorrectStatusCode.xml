@@ -1,0 +1,6 @@
+<AssignMessage name='AM-CorrectStatusCode'>
+  <Set>
+    <StatusCode>400</StatusCode>
+    <ReasonPhrase>Bad Request</ReasonPhrase>
+  </Set>
+</AssignMessage>

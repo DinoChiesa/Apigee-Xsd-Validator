@@ -1,0 +1,4 @@
+<MessageValidation name="MV-XSD-1">
+  <Source>request</Source>
+  <ResourceURL>xsd://soap-example.xsd</ResourceURL>
+</MessageValidation>
