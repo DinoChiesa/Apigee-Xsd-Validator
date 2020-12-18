@@ -143,6 +143,9 @@ date: Thu, 17 Dec 2020 22:42:39 GMT
 }
 ```
 
+You could do similar invocations with Postman or other tools.
+
+
 There are other samples to try in the [sample-payloads](./sample-payloads) directory:
 
 | filename                           | expected result |
@@ -158,13 +161,27 @@ There are other samples to try in the [sample-payloads](./sample-payloads) direc
 | broken--wrong-soap-namespace.xml   | invalid         |
 
 
-\*note: In XML Schema, there is no practical way to specify that a particular element must
-be the toplevel element. If the root element in the document matches any
-global element declaration in any of the schema, the document will be considered valid.
+\*note: The `only-inner-header.xml` document includes only an element which is
+intended to be used within the SOAP header. It does not include a SOAP
+envelope. And yet, the policy does not flag the document as invalid. What's
+going on?
+
+In XML Schema, there is no practical way to specify that a particular element
+must be the toplevel element. If the root element in the document matches any
+global element declaration in any of the schema, the document will be considered
+valid. This is just how XML Schema works.
+
+The inner element in the header is described in the schema by a
+globally-declared element. Therefore it fits this pattern.
+
 For more on this, see [here](https://stackoverflow.com/a/55019631/48082).
 
+If you wish to validate a document _and also_ check that the root element in the
+document is a particular element (for example, soap:Envelope), you would need to
+perform two checks.  The second check is not something you can do with the
+MessageValidation policy in general, for all XML documents. You might need a
+Java callout to do that work.
 
-You could do similar invocations with Postman or other tools.
 
 ## About Content-Type
 
