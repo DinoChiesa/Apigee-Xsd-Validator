@@ -148,8 +148,29 @@ date: Thu, 17 Dec 2020 22:42:39 GMT
     }
   }
 }
-
 ```
+
+There are other samples to try in the [sample-payloads](./sample-payloads) directory:
+
+| filename                           | expected result |
+| ---------------------------------- | ------------    |
+| broken--wrong-header-element.xml   | invalid         |
+| valid-soap-with-header.xml         | valid           |
+| only-inner-header.xml              | valid! (*see note) |
+| valid-soap-no-header.xml           | valid           |
+| broken--no-envelope.xml            | invalid         |
+| broken--wrong-body-element.xml     | invalid         |
+| broken--wrong-body-namespace.xml   | invalid         |
+| broken--wrong-header-namespace.xml | invalid         |
+| broken--wrong-soap-namespace.xml   | invalid         |
+
+
+\*note: In XML Schema, there is no practical way to specify that a particular element must
+be the toplevel element. If the root element in the document matches any
+global element declaration in any of the schema, the document will be considered valid.
+For more on this, see [here](https://stackoverflow.com/a/55019631/48082).
+
+
 
 You could do similar invocations with Postman or other GUI tools.
 
